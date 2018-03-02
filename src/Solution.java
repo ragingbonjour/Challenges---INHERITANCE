@@ -21,9 +21,9 @@ class Solution {
 
 // *********************************************************************
 class Person {
-	protected String firstName;
-	protected String lastName;
-	protected int idNumber;
+	private String firstName;
+	private String lastName;
+	private int idNumber;
 
 	// Constructor
 	Person(String firstName, String lastName, int identification) {
@@ -47,7 +47,7 @@ class Person {
  */
 class Student extends Person {
 
-	protected int[] testScores;
+	private int[] testScores;
 
 	Student(String firstName, String lastName, int identification, int[] testScores) {
 		/*
@@ -70,6 +70,7 @@ class Student extends Person {
 		// Check that the ID number has 7 digits as per. project constraints
 		int length = String.valueOf(id).length();
 		if (length == 7) {
+
 		} else {
 			throw new IndexOutOfBoundsException();
 		}
@@ -81,8 +82,8 @@ class Student extends Person {
 		// return char
 		char character = 0;
 		int totalScoreAccumulated = 0;
-		for (int i = 0; i < testScores.length; i++) {
-			totalScoreAccumulated += testScores[i];
+		for (int testScore : testScores) {
+			totalScoreAccumulated += testScore;
 		}
 
 		int averageGrade = totalScoreAccumulated / testScores.length;

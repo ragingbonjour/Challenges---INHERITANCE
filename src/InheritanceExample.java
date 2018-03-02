@@ -3,7 +3,7 @@ import java.text.NumberFormat;
 
 class Employee {
     // instance variables:
-    protected String name; 
+    private String name;
     private int salary; 
     
     /** Parameterized Constructor 
@@ -46,7 +46,7 @@ class Employee {
 
 class Volunteer extends Employee{
 	// instance variable:
-    int hours;
+    private int hours;
     
     /** Parameterized Constructor 
     * 	@param name The volunteer's name. **/
@@ -55,19 +55,19 @@ class Volunteer extends Employee{
         super(name);  
     }
     
-    /** @param Set the hours instance variable. **/
+    /* @param Set the hours instance variable. **/
     void setHours(int hours){
         this.hours = hours; 
     }
     
     /** @return The hours instance variable **/
-    int getHours(){
+    private int getHours(){
         return hours; 
     }
     
-    @Override 
-    /** Overrides the superclass' print method and prints information about an instance of Volunteer. **/
-    void print(){ 
+    @Override
+    /* Overrides the superclass' print method and prints information about an instance of Volunteer. **/
+    void print(){
         System.out.println("Volunteer Name: " + this.getName() 
             + "\nHours: " + this.getHours());    
     }
